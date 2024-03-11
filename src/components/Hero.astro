@@ -1,0 +1,27 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";const images = 
+import.meta.glob<{ default: ImageMetadata }>(  "/src/assets/**/*.{jpeg,jpg,png,gif}");const { name, description, imgPath } = Astro.props;if (!images[imgPath])  throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`  );
+import "../styles/reset.css"
+
+---
+
+
+
+
+<article class="card">
+    <h2>{name}</h2>
+    <p>{description}</p> 
+    <Image src={images[imgPath]()} alt={name} />
+</article>
+
+<style>
+
+.card {
+width: 125.125rem;
+height: 49.875rem;
+flex-shrink: 0;
+}
+
+    
+</style>
