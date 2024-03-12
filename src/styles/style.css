@@ -1,0 +1,103 @@
+/*------------------------global styling------------------------*/
+
+/* ------------------------colors------------------------ */
+
+:root {
+  --yellow: #ffcc4a;
+  --green: #4eaf4e;
+  --black: #181818;
+  --lightgrey: #f5f5f5;
+  --white: #fff;
+  --paragraph: #595566;
+
+  /* ------------------------fonts------------------------ */
+  --header-font: "Cabin", sans-serif;
+  --paragraph-font: "Lato", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+  font-weight: 600;
+  font-style: normal;
+  line-height: 130%;
+}
+h1 {
+  font-size: 3.125rem;
+}
+h2 {
+  font-size: 2.8125rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2.1875rem;
+}
+h5 {
+  font-size: 1.875rem;
+}
+h6 {
+  font-size: 1.5625rem;
+}
+
+p,
+a,
+ul,
+li,
+ol {
+  font-family: var(--paragraph-font);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--paragraph);
+  font-size: 1rem;
+}
+p {
+  line-height: 147.5%;
+}
+ol,
+ul {
+  line-height: 214.5%;
+}
+.quotes {
+  color: var(--white);
+  text-align: center;
+  font-family: var(--header-font);
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 140%;
+}
+/*------------------------grid------------------------*/
+.content {
+  --gap: clamp(1rem, 6vw, 3rem);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(50ch, 100% - var(--gap) * 2);
+  --popout: minmax(0, 2rem);
+  --feature: minmax(0, 5rem);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [feature-start] var(--feature)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--feature) [feature-end]
+    var(--full) [full-end];
+}
+.content > * {
+  grid-column: content;
+}
+.popout {
+  grid-column: popout;
+}
+.feature {
+  grid-column: feature;
+}
+.full {
+  grid-column: full;
+}
