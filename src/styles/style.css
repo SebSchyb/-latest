@@ -54,6 +54,7 @@ ol {
   font-style: normal;
   color: var(--paragraph);
   font-size: 1rem;
+  list-style: none;
 }
 p {
   line-height: 147.5%;

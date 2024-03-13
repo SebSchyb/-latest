@@ -15,20 +15,23 @@ import { Icon } from 'astro-icon/components'
 
  <section id="tyiir">
     <Colorcontainer body="OUR VISION" color="green"/>
-    <h1>Turn your ideas into reality.</h1>
-    <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
-    
-    <ul>
-        <li>
-            <img src="../src/icons/checkmark.svg" alt="checkmark">
-            Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.
-        </li>
-        <li>
-            <img src="../src/icons/checkmark.svg" alt="checkmark">
-            Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.
-        </li>
-    </ul>
 
+    <h1>Turn your ideas into reality.</h1>
+    <div class="text">
+        <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+        
+        <ul>
+            <li class="ul">
+                <Icon name="checkmark"/>
+                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.
+            </li>
+            <li class="ul">
+                <Icon name="checkmark"/>
+                Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.
+            </li>
+            
+        </ul>
+    </div>
 
 
 
@@ -52,5 +55,34 @@ import { Icon } from 'astro-icon/components'
     align-items: flex-start;
     gap: 8.4375rem;
 }
+[data-icon="checkmark"] {
+    width: 1.23044rem;
+    height: 1.23044rem;
+    flex-shrink: 0;
+    stroke-width: 2px;
+    stroke: #4EAF4E;
+}
+#tyiir {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1875rem;
+}
+.ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    
+}
+ul {
+    padding-left: 0px;
+}
 
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.875rem;
+    width: 36.875rem;
+}
 </style>
