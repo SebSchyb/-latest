@@ -1,7 +1,9 @@
 ---
 import type { ImageMetadata } from "astro";
+import Colorcontainer from "../components/Colorcontainer.astro"
 import { Image } from "astro:assets";const images = 
-import.meta.glob<{ default: ImageMetadata }>(  "/src/assets/**/*.{jpeg,jpg,png,gif}");const { name, description, imgPath } = Astro.props;if (!images[imgPath])  throw new Error(    `"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`  );
+import.meta.glob<{ default: ImageMetadata }>(  "/src/assets/**/*.{jpeg,jpg,png,gif}");
+const { name, description, imgPath } = Astro.props;if (!images[imgPath])  throw new Error(`"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`);
 
 
 ---
@@ -13,7 +15,7 @@ import.meta.glob<{ default: ImageMetadata }>(  "/src/assets/**/*.{jpeg,jpg,png,g
     
     <Image class="fit" src={images[imgPath]()} alt={name} />
     <div>
-        <p class="yellowcontainer">{name}</p>
+        <Colorcontainer body="SERVICES" color="yellow"/>
         <h1>{description}</h1> 
 
     </div>
