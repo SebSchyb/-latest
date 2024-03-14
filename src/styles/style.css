@@ -56,6 +56,9 @@ ol {
   font-size: 1rem;
   list-style: none;
 }
+li::marker {
+  content: url(../icons/checkmark.svg);
+}
 p {
   line-height: 147.5%;
 }

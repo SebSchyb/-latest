@@ -7,22 +7,28 @@ const { name, description, imgPath } = Astro.props;if (!images[imgPath])  throw 
 
 ---
 
-<article class="card">
+<figure class="card">
   <Image src={images[imgPath]()} alt={name} />
-</article>
+</figure>
 
 <style>
+figure {
+  position: relative;
 
-.card {
-height: 29.6875rem;
-flex-shrink: 0;
-width: 44.5rem;
-}
-.card > * {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 22rem;
+    bottom: 16rem;
+    background: green;
+    width: 150px;
+    height: 105px;
     border-radius: 1.8125rem;
-    width: 44.5rem;
-height: 29.6875rem;
-flex-shrink: 0;
+    z-index: -1;
 }
-
+}
+figure > * {
+  width: 488px;
+  border-radius: 1.8125rem;
+}
 </style>

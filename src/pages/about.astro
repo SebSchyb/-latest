@@ -10,79 +10,63 @@ import { Image } from "astro:assets"
 import Imagepattern from "../components/Imagepattern.astro"
 ---
 
+
 <Baselayout>
- <Hero imgPath="/src/assets/images/abouthero.jpg" name="SERVICES" description="Creative Services For Boost Your Business Growth"/>
-
- <section id="tyiir">
-    <div class="text">
-        <Colorcontainer body="OUR VISION" color="green"/>
-        <h2>Turn your ideas into reality.</h2>
-        <div class="text-content">
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
-            <ul>
-                <li class="ul">
-                    <Icon name="checkmark"/>
-                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.
-                </li>
-                <li class="ul">
-                    <Icon name="checkmark"/>
-                    Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="image-container">
-        <Imagepattern imgPath="/src/assets/images/tyiirpic.jpg" name="tyiirpic" alt="tyiirpic"/>
-    </div>
+<section id="hero">
+    <Hero imgPath="/src/assets/images/abouthero.jpg" name="SERVICES" description="Creative Services For Boost Your Business Growth"/>
 </section>
+<section id="our-vision" class="content">
+    <article class="gridl">
+        <Colorcontainer body="OUR VISION" color="green"/>
+        <h2>Turn your ideas intro reality</h2>
+        <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+        <ul>
+            <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
+            <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
+        </ul>
+    </article>
 
-<div id="numberthing">  
-    <Numbers numbers="1128+" text="Succesful work"/>
-    <Numbers numbers="908+" text="Team Member"/>
-    <Numbers numbers="258+" text="Happy Customers"/>
-    <Numbers numbers="564+" text="Creative Idea"/>
-</div>
+    <article class="gridr">
+        <figure>
+            <Imagepattern imgPath="/src/assets/images/tyiirpic.jpg" name="tyiirpic" alt="tyiirpic"/>
+        </figure>
+    </article>
 
+    <article class="num">
+        <Numbers numbers="1128+" text="Succesful work"/>
+        <Numbers numbers="908+" text="Team Member"/>
+        <Numbers numbers="258+" text="Happy Customers"/>
+        <Numbers numbers="564+" text="Creative Idea"/>
+    </article>
+
+
+
+
+
+</section>
+<section id="core-values"></section>
 </Baselayout>
 
 <style>
-#numberthing {
+   :is(ol,ul) {
+    padding-inline-start: 1em;
+   }
+   #our-vision {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+   article{
+    padding: 2em;
+    max-width: 65ch;
+    margin-inline: auto;
+   }
+   .num {
+    width: 100%;
+    grid-column: 1 / span 2;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 8.4375rem;
-    margin-top: 3.12rem;
-}
-[data-icon="checkmark"] {
-    width: 1.23044rem;
-    height: 1.23044rem;
-    flex-shrink: 0;
-    stroke-width: 2px;
-    stroke: #4EAF4E;
-}
-#tyiir {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    gap: 7.625rem;
- max-width: 1200px;
-    margin: 0 auto; /* Center horizontally */
-    margin-top: 5.95rem;
-}
-
-.ul {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-}
-ul {
-    padding-left: 0px;
-}
-.text-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.875rem;
-   
-}
-
+   }
 </style>
