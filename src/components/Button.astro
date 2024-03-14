@@ -1,12 +1,15 @@
 ---
 const { body = "badge", color ="green"} = Astro.props;
 ---
+
+
+<div>
 <a href="#">
 <h1 class={color}>
     {body}
 </h1>
 </a>
-
+</div>
 
 
 
@@ -44,9 +47,5 @@ h1 {
     background-color: var(--black);
     color: var(--white);
 }
-
-
-
-
 
 </style>
