@@ -12,10 +12,10 @@ import Imagepattern from "../components/Imagepattern.astro"
 
 
 <Baselayout>
-<section id="hero">
+<section id="hero" class="full">
     <Hero imgPath="/src/assets/images/abouthero.jpg" name="SERVICES" description="Creative Services For Boost Your Business Growth"/>
 </section>
-<section id="our-vision" class="content">
+<section id="our-vision" class="feature">
     <article class="gridl">
         <Colorcontainer body="OUR VISION" color="green"/>
         <h2>Turn your ideas intro reality</h2>
@@ -40,7 +40,19 @@ import Imagepattern from "../components/Imagepattern.astro"
     </article>
 
 </section>
-<section id="core-values"></section>
+
+<section id="core-values" class="full">
+    <div id="parent" class="content">
+        <div class="feature">
+            <h1>test</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias amet rerum optio mollitia provident nihil 
+                similique totam sint, deserunt qui non ea id cum quisquam facilis enim delectus minima veniam.
+            </p>
+        </div>
+    </div>
+</section>
+
 </Baselayout>
 
 <style>
@@ -64,5 +76,8 @@ import Imagepattern from "../components/Imagepattern.astro"
     justify-content: center;
     align-items: flex-start;
     gap: 8.4375rem;
+   }
+   #core-values{
+    background-color: var(--lightgrey);
    }
 </style>
