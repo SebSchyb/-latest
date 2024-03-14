@@ -1,8 +1,25 @@
 ---
-import { Icon } from 'astro-icon/components'
-import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro";
+import Colorcontainer from "../components/Colorcontainer.astro"
+import { Image } from "astro:assets";const images = 
+import.meta.glob<{ default: ImageMetadata }>(  "/src/assets/**/*.{jpeg,jpg,png,gif}");
+const { name, description, imgPath } = Astro.props;if (!images[imgPath])  throw new Error(`"${imgPath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`);
+
 ---
 
-<div>
-<Icon name="123"/>
-</div>
+<article class="card">
+  <Image src={images[imgPath]()} alt={name} />
+</article>
+
+<style>
+
+.card {
+height: 29.6875rem;
+flex-shrink: 0;
+width: 44.5rem;
+}
+.card > * {
+    border-radius: 1.8125rem;
+}
+
+</style>
