@@ -55,6 +55,7 @@ ol {
   color: var(--paragraph);
   font-size: 1rem;
   list-style: none;
+  text-decoration: none;
 }
 li::marker {
   content: url(../icons/checkmark.svg);

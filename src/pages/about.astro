@@ -9,7 +9,8 @@ import { Icon } from 'astro-icon/components'
 import { Image } from "astro:assets"
 import Imagepattern from "../components/Imagepattern.astro"
 import Button from "../components/Button.astro"
-import Card from "../components/Button.astro"
+import Card from "../components/Card.astro"
+import Imagepattern2 from "../components/Imagepattern2.astro"
 ---
 
 
@@ -60,19 +61,29 @@ import Card from "../components/Button.astro"
                 
                 <Button body="Get in touch" color="black"/>
             </article>
-
-
-            
-            <article class="flexd">
-                <Card></Card>
-            </article>
-
-
-
-
-
         </div>
+            <article class="flexd feature" >
+                <Card iconname="stack" title="Creative Ideas" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."/>
+                <Card iconname="stats" title="Best Features" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."/>
+                <Card iconname="globe" title="Experience" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."/>
+                <Card iconname="cog" title="Easy Solutions" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."/>
+            </article>
     </div>
+</section>
+
+
+
+<section id="history" class="feature">
+    <article>
+
+    <Colorcontainer body="OUR HISTORY" color="green" />
+    <h2>Better Website Means A User Experience</h2>
+    <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+    
+    </article>
+
+    <Imagepattern2 imgPath="/src/assets/images/video.jpg" name="video" alt="video"/>
+ 
 </section>
 
 </Baselayout>
@@ -111,6 +122,28 @@ import Card from "../components/Button.astro"
     grid-template-columns: 2fr 1fr;
     width: 100%
 }
+.flexd {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-inline: 0;
+    max-width: 100%;
 
+}
+#history {
+    margin-top: 2rem;
+    margin-bottom: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#history article {
+    padding: 2em;
+    max-width: 65ch;
+}
+#history h2 {
+    margin-top: 2rem;
+}
    
 </style>
